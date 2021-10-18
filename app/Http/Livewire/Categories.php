@@ -83,11 +83,72 @@ class Categories extends Component
         $this->emit('category-added', 'Categtoria Registrada');
     }
 
+    public function Update()
+    {
+        $rules = [
+            'name' => 'required|min:3|unique:categories,name,'.$this->selected_id
+        ];
+
+        $messages = [
+            'name.required' => 'El nombre de la categoria es obligatorio',            
+            'name.min' => 'El nombre de la categoria debe ser de por lo menos 3 caracteres',
+            'name.unique' => 'El nombre de la categoria ya existe',
+        ];
+
+        $this->validate($rules, $messages);  
+
+        $category = Category::find($this->selected_id);
+        $category->update([
+            'name' => $this->name
+        ]);
+
+        
+        if($this->image)
+        {
+            $customFileName = uniqid().'_.'.$this->image->extension();
+            $this->image->storeAs('public/categories', $customFileName);
+            $imageName = $category->image;
+            $category->image = $customFileName;
+            $category->save();
+
+            if($imageName != null)
+            {
+                if(file_exists('storage/categories/'.$imageName))
+                {
+                    unlink('storage/categories/'.$imageName);
+                }
+            }
+
+        }    
+
+        $this->resetUI();
+        $this->emit('category-updated', 'categoria actualizada');  
+    }
+
     public function resetUI()
     {
         $this->name = '';
         $this->image = null;
         $this->search = '';
         $this->selected_id = 0;
+    }
+    
+    protected $listeners = [
+        'deleteRow' => 'Destroy'
+    ];
+    
+    public function Destroy(Category $category)
+    {
+        //$category = Category::find($id);
+        $imageName = $category->image; 
+        $category->delete();
+
+        if($imageName != null)
+        {
+            unlink('storage/categories/'.$imageName);
+        }
+
+        $this->resetUI();
+        $this->emit('category-deleted', 'Categoria Eliminada');
     }
 }

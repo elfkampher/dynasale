@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Categories;
+use App\Http\Livewire\Coins;
+use App\Http\Livewire\Pos;
+use App\Http\Livewire\Products;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +25,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('categories', Categories::class);
+Route::get('products', Products::class);
+Route::get('coins', Coins::class);
+Route::get('pos', Pos::class);

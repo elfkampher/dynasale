@@ -10,4 +10,9 @@ class SaleDetails extends Model
     use HasFactory;
 
     protected $fillable = ['price', 'quantity', 'product_id', 'sale_id'];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

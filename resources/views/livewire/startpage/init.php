@@ -7,7 +7,7 @@
 				<h4 class="card-title">
 					<b>Component Name | PageTitle</b>
 				</h4>
-				<ul class="tab tabs-pills">
+				<ul class="tabs tabs-pills">
 					<li>
 						<a href="javascript:void(0)" class="tabmenu bg-dark" data-toggle="modal" data-target="#theModal">Agregar</a>
 					</li>
