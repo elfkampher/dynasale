@@ -45,9 +45,9 @@ class Pos extends Component
     ];
 
     public function ScanCode($barcode, $cant = 1)
-    {
+    {        
         $product = Product::where('barcode', $barcode)->first();
-
+        
         if($product == null || empty($product))
         {
             $this->emit('scan-notfound', 'El producto no esta registrado');
@@ -72,7 +72,7 @@ class Pos extends Component
         }
     }
 
-    public function InCart($prouctId)
+    public function InCart($productId)
     {
         $exist = Cart::get($productId);
         if($exist)

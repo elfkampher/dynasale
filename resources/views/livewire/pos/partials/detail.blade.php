@@ -7,7 +7,7 @@
 					<table class="table table-bordered table-striped mt-1">
 						<thead class="text-white" style="background: #3B3F5C;">
 							<tr>
-								<tr width="10%"></tr>
+								<th width="10%">IMAGEN</th>
 								<th class="table-th text-left text-white">DESCRIPCIÓN</th>
 								<th class="table-th text-center text-white">PRECIO</th>
 								<th width="13%" class="table-th text-left text-white">CANT</th>
@@ -50,7 +50,7 @@
 										<i class="fas fa-minus"></i>
 									</button>
 									<button class="btn btn-dark mtmobile" wire:click="increaseQty({{ $item->id }})">
-										<i class="fas fa-minus"></i>
+										<i class="fas fa-plus"></i>
 									</button>
 
 								</td>
