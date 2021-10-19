@@ -24,6 +24,7 @@ class Pos extends Component
 
     public function render()
     {
+        $cart = Cart::getContent()->sortBy('name');
         
         return view('livewire.pos.component', [
             'denominations' => Denomination::orderBy('value', 'desc')->get(),
@@ -65,7 +66,7 @@ class Pos extends Component
                 $this->emit('no-stock', 'Stock Insuficiente :/');
                 return;
             }
-
+            dd($product);
             Cart::add($product->id, $product->name, $product->price, $cant, $product->image);
             $this->total = Cart::getTotal();
 

@@ -20,7 +20,7 @@
 							<tr>
 								<td class="text-center table-th">
 									@if(count($item->attributes) > 0)
-									<span>
+									<span>										
 										<img src="{{ asset('storage/products/' . $item->attributes[0]) }}" alt="imagen"  height="90" width="90" class="rounded">
 									</span>
 									@endif
