@@ -1,4 +1,5 @@
 <script src="{{ asset('assets/js/loader.js') }}"></script>
+<script src="{{ asset('js/onscan.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>

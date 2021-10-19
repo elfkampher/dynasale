@@ -14,14 +14,6 @@
 
 	function Confirm(id, eventName, text)
     {
-        if(products>0)
-        {
-            swal({
-                title: 'Error',
-                type: 'error',
-                text:'No se puede eliminar la categoria, porque tiene productos relacionados'})
-            return;
-        }
         swal({
             title: 'CONFIRMAR',
             text: text,
