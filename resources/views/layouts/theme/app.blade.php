@@ -11,6 +11,9 @@
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     @include('layouts.theme.styles')
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    @include('layouts.theme.scripts')
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
 
 </head>
 <body class="sidebar-noneoverflow dashboard-sales">
@@ -62,14 +65,6 @@
 
     </aside> -->
 
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    @include('layouts.theme.scripts')
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="plugins/apex/apexcharts.min.js"></script>
-    <script src="assets/js/dashboard/dash_2.js"></script>
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-
+    
 </body>
 </html>

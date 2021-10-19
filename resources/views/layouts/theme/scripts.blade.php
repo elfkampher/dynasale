@@ -4,7 +4,7 @@
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('plugins/nicescroll/nicescroll.js') }}"></script>
-<script src="{{ asset('plugins/dmauro-keypress/keypress.js') }}"></script>
+<script src="{{ asset('plugins/dmauro/keypress.js') }}"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 <script>
     $(document).ready(function() {

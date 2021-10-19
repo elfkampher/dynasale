@@ -4,9 +4,11 @@ namespace App\Http\Livewire;
 
 use App\Models\Denomination;
 use App\Models\Product;
+use App\Models\Sale;
+use App\Models\SaleDetails;
+use DB;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Livewire\Component;
-use DB;
 
 class Pos extends Component
 {
@@ -211,7 +213,7 @@ class Pos extends Component
                 'items' => $this->itemsQuantity,
                 'cash' => $this->efectivo,
                 'change' => $this->change,
-                'userod' => $this->Auth()->user()->id                
+                'user_id' => Auth()->user()->id                
             ]);
 
             if($sale)
@@ -219,7 +221,7 @@ class Pos extends Component
                 $items = Cart::getContent();
                 foreach($items as $item)
                 {
-                    SaleDetail::create([
+                    SaleDetails::create([
                         'price' => $item->price,
                         'quantity' => $item->quantity,
                         'product_id' => $item->id,
