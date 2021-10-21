@@ -66,7 +66,7 @@ class Pos extends Component
                 $this->emit('no-stock', 'Stock Insuficiente :/');
                 return;
             }
-            dd($product);
+            
             Cart::add($product->id, $product->name, $product->price, $cant, $product->image);
             $this->total = Cart::getTotal();
 
@@ -208,7 +208,7 @@ class Pos extends Component
 
         DB::beginTransaction();
 
-        try {
+        try {            
             $sale = Sale::create([
                 'total' => $this->total,
                 'items' => $this->itemsQuantity,
