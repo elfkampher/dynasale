@@ -118,6 +118,6 @@ class Roles extends Component
     {
         $this->roleName = '';
         $this->search = '';
-        $this->selected_id;
+        $this->selected_id=0;
     }
 }

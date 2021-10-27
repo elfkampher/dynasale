@@ -25,8 +25,8 @@
                         <thead class="text-white" style="background: #3B3F5C;">
                             <tr>
                                 <th class="table-th text-white">ID</th>
-                                <th class="table-th text-white">Descripción</th>                                
-                                <th class="table-th text-white">Actions</th>
+                                <th class="table-th text-white text-center">Descripción</th>                                
+                                <th class="table-th text-white text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -93,19 +93,23 @@
         })
     });
 
-    swal({
-        title: 'CONFIRMAR',
-        text: '¿Confirmas Eliminar El Registro?',
-        type: 'warning',
-        showCancelButton: true,
-        cancelButtonText: 'Cerrar',
-        cancelButtonColor: '#fff',
-        confirmButtonText: 'Aceptar',
-        confirmButtonColor: '#3B3F5C'
-    }).then(function(result){
-        if(result.value){
-            window.livewire.emit('deleteRow', id)
-            swal.close()
-        }
-    })
+    function confirm(id)
+    {
+        swal({
+            title: 'CONFIRMAR',
+            text: '¿Confirmas Eliminar El Registro?',
+            type: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cerrar',
+            cancelButtonColor: '#fff',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#3B3F5C'
+        }).then(function(result){
+            if(result.value){
+                window.livewire.emit('destroy', id)
+                swal.close()
+            }
+        })    
+    }
+    
 </script>
