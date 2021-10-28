@@ -93,7 +93,7 @@
         })
     });
 
-    function confirm(id)
+    function Confirm(id)
     {
         swal({
             title: 'CONFIRMAR',
