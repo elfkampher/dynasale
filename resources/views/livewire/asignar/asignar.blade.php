@@ -48,11 +48,11 @@
                                             <div class="n-check">
                                                 <label class="new-control new-checkbox checkbox-primary">
                                                     <input type="checkbox" 
-                                                    whire:change="SyncPermiso($('#p' + {{ $permiso->id }}).is(':checked'), '{{ $permiso->name }}')"
+                                                    wire:change="syncPermiso($('#p' + {{ $permiso->id }}).is(':checked'), '{{ $permiso->name }}' )"
                                                     id="p{{ $permiso->id }}"
                                                     value="{{ $permiso->id }}" 
                                                     class="new-control-input"
-                                                    {{ $periso->checked == 1 ? 'checked' : '' }} 
+                                                    {{ $permiso->checked == 1 ? 'checked' : '' }} 
                                                     >
                                                     <span class="new-control-indicator"></span>
                                                     <h6>{{ $permiso->name }}</h6>
@@ -101,15 +101,7 @@
     });
 
     function Revocar()
-    {
-        if(products>0)
-        {
-            swal({
-                title: 'Error',
-                type: 'error',
-                text:'No se puede eliminar la categoria, porque tiene productos relacionados'})
-            return;
-        }
+    {        
         swal({
             title: 'CONFIRMAR',
             text: '¿Confirmas revocar todos los permisos?',
@@ -121,7 +113,7 @@
             confirmButtonColor: '#3B3F5C'
         }).then(function(result){
             if(result.value){
-                window.livewire.emit('revokeall', id)
+                window.livewire.emit('revokeall')
                 swal.close()
             }
         })

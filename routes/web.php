@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Livewire\Asignar;
 use App\Http\Livewire\Categories;
 use App\Http\Livewire\Coins;
+use App\Http\Livewire\Permisos;
 use App\Http\Livewire\Pos;
 use App\Http\Livewire\Products;
 use App\Http\Livewire\Roles;
-use App\Http\Livewire\Permisos;
+use App\Http\Livewire\Users;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,5 @@ Route::get('coins', Coins::class);
 Route::get('pos', Pos::class);
 Route::get('roles', Roles::class);
 Route::get('permisos', Permisos::class);
+Route::get('asignar', Asignar::class);
+Route::get('users', Users::class);

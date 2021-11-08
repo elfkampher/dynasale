@@ -45,7 +45,7 @@ class Asignar extends Component
             foreach($permisos as $permiso)
             {
                 $role = Role::find($this->role);
-                $tienePermiso = $role->hasPermissionsTo($permiso->name);
+                $tienePermiso = $role->hasPermissionTo($permiso->name);
                 if($tienePermiso){
                     $permiso->checked = 1;
                 }
@@ -89,7 +89,7 @@ class Asignar extends Component
 
     public function syncPermiso($state, $permisoName)
     {
-        if($this->role == 'Elegir')
+        if($this->role != 'Elegir')
         {
             $roleName = Role::find($this->role);
             if($state)
@@ -100,6 +100,8 @@ class Asignar extends Component
                 $roleName->revokePermissionTo($permisoName);
                 $this->emit('permi', 'Permiso eliminado correctamente');
             }
+        }else{
+            $this->emit('permi', 'Elige un rol válido');
         }
     }
 
