@@ -52,7 +52,7 @@ class Asignar extends Component
             }
         }
 
-        return view('livewire.asignar.asignar' [
+        return view('livewire.asignar.asignar', [
             'roles' => Role::orderBy('name', 'asc')->get(), 
             'permisos' => $permisos
         ])->extends('layouts.theme.app')->section('content');
