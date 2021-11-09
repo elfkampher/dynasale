@@ -1,5 +1,5 @@
 <div class="row sales layout-top-spacing">
-    <div class="col-ms-12">
+    <div class="col-sm-12">
         <div class="widget widget-chart-one">
             <div class="widget-heading">
                 <h4 class="card-title text-center">Corte de Caja</h4>   
@@ -11,7 +11,7 @@
                     <div class="col-sm-12 col-md-3">
                         <div class="form-group">
                             <label>Usuario</label>
-                            <select wire:model="userid">
+                            <select wire:model="userid" class="form-control">
                                 <option value="0" disabled>Elegir</option>
                                 @foreach($users as $u)
                                 <option value="{{ $u->id }}">{{ $u->name }}</option>
@@ -60,7 +60,7 @@
                 <div class="col-sm-12 col-md-8">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped mt-1">
-                            <thead class="text-white" style="background: #3B3FF5">
+                            <thead class="text-white" style="background: #3B3F5C">
                                 <tr>
                                     <th class="table-th text-center text-white">Folio</th>
                                     <th class="table-th text-center text-white">Total</th>
@@ -110,7 +110,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function(){
         window.livewire.on('show-modal', Msg=>{
-            $('modal-details').modal('show')
+            $('#modal-details').modal('show')
         })
     })
 </script>

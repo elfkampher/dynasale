@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Asignar;
+use App\Http\Livewire\Cashout;
 use App\Http\Livewire\Categories;
 use App\Http\Livewire\Coins;
 use App\Http\Livewire\Permisos;
@@ -36,3 +37,4 @@ Route::get('roles', Roles::class);
 Route::get('permisos', Permisos::class);
 Route::get('asignar', Asignar::class);
 Route::get('users', Users::class);
+Route::get('cashout', Cashout::class);
