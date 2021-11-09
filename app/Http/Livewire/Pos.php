@@ -69,6 +69,7 @@ class Pos extends Component
             
             Cart::add($product->id, $product->name, $product->price, $cant, $product->image);
             $this->total = Cart::getTotal();
+            $this->itemsQuantity = Cart::getTotalQuantity();
 
             $this->emit('scan-ok', 'Producto Agregado');
 
