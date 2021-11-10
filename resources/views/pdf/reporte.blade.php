@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Reporte de Ventas</title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom_pdf.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom_page.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom_pdf.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom_page.css') }}">
 </head>
 <body>
 <section class="header" style="top:-287px">
@@ -17,7 +17,7 @@
 		</tr>
 		<tr>
 			<td width="30%" style="vertical-align: top; padding-top: 10px; position: relative;">
-				<img src="{{ asset('assets/img/encodyne.png') }}" alt="" class="invoice.logo">
+				<img src="{{ asset('assets/img/encodyne.png') }}" alt="" class="invoice-logo">
 			</td>
 
 			<td width="70%" class="text-left text-company" style="vertical-align: top; padding-top: 10px;">
@@ -43,12 +43,12 @@
 	<table cellpadding="0" cellspacing="0" class="table-items" width="100%">
 		<thead>
 			<tr>
-				<td width="10%">Folio</td>
-				<td width="12%">Importe</td>
-				<td width="10%">Items</td>
-				<td width="12%">Estatus</td>
-				<td>Usuario</td>
-				<td width="18%">Fecha</td>
+				<th width="10%">Folio</th>
+				<th width="12%">Importe</th>
+				<th width="10%">Items</th>
+				<th width="12%">Estatus</th>
+				<th>Usuario</th>
+				<th width="18%">Fecha</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -69,7 +69,7 @@
 					<span><b>Totales</b></span>
 				</td>
 				<td colspan="1">
-					<span>${{ number_format($data->sum('total'), 2) }}</span>
+					<span><strong>${{ number_format($data->sum('total'), 2) }}</strong></span>
 				</td>
 				<td class="text-center">
 					{{ $data->sum('items') }}

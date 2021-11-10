@@ -53,7 +53,7 @@
                             <a href="{{ url('report/pdf'. '/' . $userId . '/' . $reportType . '/' . $dateFrom . '/' . $dateTo ) }}" class="btn btn-dark btn-block {{ count($data) < 1 ? 'disabled' : '' }}" 
                             target="_blank">Generar PDF</a>
 
-                            <a href="{{ url('report/pdf'. '/' . $userId . '/' . $reportType . '/' . $dateFrom . '/' . $dateTo ) }}" 
+                            <a href="{{ url('report/excel'. '/' . $userId . '/' . $reportType . '/' . $dateFrom . '/' . $dateTo ) }}" 
                             class="btn btn-dark btn-block {{ count($data) < 1 ? 'disabled' : '' }}" target="_blank">Exportar a Excel</a>
                         </div>
 

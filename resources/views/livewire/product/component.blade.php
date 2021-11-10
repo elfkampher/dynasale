@@ -7,13 +7,17 @@
                     <b>{{ $componentName }} | {{ $pageTitle }}</b>
                 </h4>
                 <ul class="tabs tabs-pills">
+                    @can('Product_Create')
                     <li>
                         <a href="javascript:void(0)" class="tabmenu bg-dark" data-toggle="modal" data-target="#theModal">Agregar</a>
-                    </li>                    
+                    </li>               
+                    @endcan     
                 </ul>
             </div>
 
+            @can('Product_Search')
             @include('common.searchbox')
+            @endcan
 
             <div class="widget-content">
                 
@@ -49,17 +53,21 @@
                                     </span>
                                 </td>
                                 <td class="text-center">
+                                    @can('Product_Update')
                                     <a href="javcascript:void(0)" 
                                         wire:click="Edit({{ $product->id }})"
                                         class="btn btn-dark mtmobile" title="edit">
                                         <i class="far fa-edit"></i>
                                     </a>
+                                    @endcan
                                     
+                                    @can('Product_Destroy')
                                     <a href="javascript:void(0)" 
                                     onclick="Confirm('{{ $product->id }}', {{ $product->ventas }})"
                                     class="btn btn-dark"  title="delete">
                                         <i class="fas fa-times"></i>
                                     </a>
+                                    @endcan
                                     
                                 </td>
                             </tr>

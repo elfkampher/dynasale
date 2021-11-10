@@ -8,16 +8,18 @@
                     <b>{{ $componentName }} | {{ $pageTitle }}</b>
                 </h4>
                 <ul class="tabs tabs-pills">
+                    @can('Category_Create')
                     <li>
                         <a href="javascript:void(0)" class="tabmenu bg-dark" data-toggle="modal" data-target="#theModal">
                         Agregar</a>
                     </li>
+                    @endcan
                     
                 </ul>
             </div>
-
+            @can('Category_Search')
             @include('common.searchbox')
-
+            @endcan
             <div class="widget-content">
                 
                 <div class="table-responsive">
@@ -40,17 +42,21 @@
                                     </span>
                                 </td>
                                 <td class="text-center">
+                                    @can('Category_Update')
                                     <a href="javcascript:void(0)" 
                                         wire:click="Edit({{ $category->id }})"
                                         class="btn btn-dark mtmobile" title="edit">
                                         <i class="far fa-edit"></i>
                                     </a>
+                                    @endcan
                                     
+                                    @can('Category_Destroy')
                                     <a href="javascript:void(0)" 
                                     onClick="Confirm('{{ $category->id }}', {{ $category->products->count() }})"
                                     class="btn btn-dark"  title="delete">
                                         <i class="fas fa-times"></i>
                                     </a>
+                                    @endcan
                                     
                                 </td>
                             </tr>

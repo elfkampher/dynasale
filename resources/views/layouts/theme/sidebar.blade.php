@@ -14,7 +14,7 @@
                 </a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </li>
-
+            @can('Category_Index')
             <li class="menu">
                 <a href="{{ url('categories') }}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
@@ -26,7 +26,9 @@
                 </a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </li>
+            @endcan
 
+            @can('Product_Index')
             <li class="menu">
                 <a href="{{ url('products') }}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
@@ -38,6 +40,7 @@
                 </a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </li>
+            @endcan
 
 
             <li class="menu">
