@@ -10,6 +10,7 @@ use App\Http\Livewire\Products;
 use App\Http\Livewire\Roles;
 use App\Http\Livewire\Users;
 use App\Http\Livewire\Reports;
+use App\Http\Controllers\ExportController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,7 @@ Route::get('asignar', Asignar::class);
 Route::get('users', Users::class);
 Route::get('cashout', Cashout::class);
 Route::get('reports', Reports::class);
+//Reportes PDF
+Route::get('report/pdf/{user}/{type}/{f1}/{f2}', [ExportController::class, 'reportPDF']);
+Route::get('report/pdf/{user}/{type}', [ExportController::class, 'reportPDF']);
+//Reportes Excel
