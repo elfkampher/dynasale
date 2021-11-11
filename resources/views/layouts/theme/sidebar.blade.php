@@ -42,7 +42,7 @@
             </li>
             @endcan
 
-
+            @can('Pos_Index')
             <li class="menu">
                 <a href="{{ url('pos') }}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
@@ -54,7 +54,9 @@
                 </a>
 
             </li>
+            @endcan
 
+            @can('Role_Index')
             <li class="menu">
 
                 <a href="{{ url('roles') }}" class="menu-toggle" data-active="false">
@@ -68,7 +70,9 @@
                 </a>
 
             </li>
+            @endcan
 
+            @can('Permiso_Index')
             <li class="menu">
 
                 <a href="{{ url('permisos') }}" class="menu-toggle" data-active="false">
@@ -82,7 +86,9 @@
                 </a>
 
             </li>
+            @endcan
 
+            @can('Asignar_Index')
             <li class="menu">
 
                 <a href="{{ url('asignar') }}" class="menu-toggle" data-active="false">
@@ -96,7 +102,9 @@
                 </a>
 
             </li>
+            @endcan
 
+            @can('User_Index')
             <li class="menu">
 
                 <a href="{{ url('users') }}" class="menu-toggle" data-active="false">
@@ -110,7 +118,9 @@
                 </a>
 
             </li>
+            @endcan
 
+            @can('Coin_Index')
             <li class="menu">
 
                 <a href="{{ url('coins') }}" class="menu-toggle" data-active="false">
@@ -124,7 +134,9 @@
                 </a>
 
             </li>
+            @endcan
 
+            @can('Cashout_Index')
             <li class="menu">
 
                 <a href="{{ url('cashout') }}" class="menu-toggle" data-active="false">
@@ -138,7 +150,9 @@
                 </a>
 
             </li>
+            @endcan
 
+            @can('Report_Index')
             <li class="menu" >
 
                 <a href="{{ url('reports') }}" class="menu-toggle" data-active="false">
@@ -152,6 +166,7 @@
                 </a>
 
             </li>
+            @endcan
 
         </ul>
 

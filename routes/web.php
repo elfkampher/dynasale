@@ -31,19 +31,26 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('categories', Categories::class);
-Route::get('products', Products::class);
-Route::get('coins', Coins::class);
-Route::get('pos', Pos::class);
-Route::get('roles', Roles::class);
-Route::get('permisos', Permisos::class);
-Route::get('asignar', Asignar::class);
-Route::get('users', Users::class);
-Route::get('cashout', Cashout::class);
-Route::get('reports', Reports::class);
-//Reportes PDF
-Route::get('report/pdf/{user}/{type}/{f1}/{f2}', [ExportController::class, 'reportPDF']);
-Route::get('report/pdf/{user}/{type}', [ExportController::class, 'reportPDF']);
-//Reportes Excel
-Route::get('report/excel/{user}/{type}/{f1}/{f2}', [ExportController::class, 'reporteExcel']);
-Route::get('report/excel/{user}/{type}', [ExportController::class, 'reporteExcel']);
+Route::middleware(['auth'])->group(function(){
+
+    Route::get('categories', Categories::class)->middleware('permission:Category_Index');
+    Route::get('products', Products::class)->middleware('permission:Product_Index');
+    Route::get('coins', Coins::class)->middleware('permission:Coin_Index');
+    Route::get('pos', Pos::class)->middleware('permission:Pos_Index');
+    Route::group(['middleware' => ['role:Admin']], function(){
+        Route::get('roles', Roles::class);
+        Route::get('permisos', Permisos::class);
+        Route::get('asignar', Asignar::class);
+    });
+
+    Route::get('users', Users::class);
+    Route::get('cashout', Cashout::class)->middleware('permission:Cashout_Index');
+    Route::get('reports', Reports::class)->middleware('permission:Reports_Index');
+
+    //Reportes PDF
+    Route::get('report/pdf/{user}/{type}/{f1}/{f2}', [ExportController::class, 'reportPDF']);
+    Route::get('report/pdf/{user}/{type}', [ExportController::class, 'reportPDF']);
+    //Reportes Excel
+    Route::get('report/excel/{user}/{type}/{f1}/{f2}', [ExportController::class, 'reporteExcel']);
+    Route::get('report/excel/{user}/{type}', [ExportController::class, 'reporteExcel']);
+});
